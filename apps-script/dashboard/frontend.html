@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base target="_top">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Red de Exploradores</title>
+  <?!= include('styles'); ?>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1><i class="fas fa-network-wired"></i> Red de Exploradores</h1>
+    
+    <!-- Tarjetas KPIs -->
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-title">Exploradores activos</div>
+        <div class="kpi-value" id="expActivos">-</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-title">Total personas</div>
+        <div class="kpi-value" id="totalPersonas">-</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-title">Negocios detectados</div>
+        <div class="kpi-value" id="negDetectados">-</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-title">Clientes instalados</div>
+        <div class="kpi-value" id="clientesInst">-</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-title">Ingreso instalaciones</div>
+        <div class="kpi-value" id="ingresoInst">-</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-title">Ingreso mensual</div>
+        <div class="kpi-value" id="ingresoMen">-</div>
+      </div>
+    </div>
+
+    <!-- Pipeline gráfico y tabla -->
+    <div class="row">
+      <div class="col">
+        <h2>Pipeline de ventas <i class="fas fa-chart-line"></i></h2>
+        <canvas id="pipelineChart" width="400" height="200"></canvas>
+      </div>
+      <div class="col">
+        <h2>Top exploradores <i class="fas fa-crown"></i></h2>
+        <table class="table">
+          <thead><tr><th>Explorador</th><th>Clientes</th></tr></thead>
+          <tbody id="topExploradores"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <h2>Ingresos por persona <i class="fas fa-dollar-sign"></i></h2>
+        <table class="table">
+          <thead><tr><th>Persona</th><th>Total</th></tr></thead>
+          <tbody id="topIngresos"></tbody>
+        </table>
+      </div>
+      <div class="col">
+        <h2>Actividad reciente <i class="fas fa-history"></i></h2>
+        <table class="table">
+          <thead><tr><th>Persona</th><th>Acción</th><th>Fecha</th></tr></thead>
+          <tbody id="actividadReciente"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>Exploradores inactivos: <span id="inactivos">-</span></p>
+      <p><i class="fas fa-sync-alt"></i> Actualizado automáticamente</p>
+    </div>
+  </div>
+
+  <script>
+    // Cargar datos al inicio
+    google.script.run.withSuccessHandler(renderDashboard).getData();
+
+    function renderDashboard(data) {
+      // KPIs
+      document.getElementById('expActivos').innerText = data.exploradoresActivos;
+      document.getElementById('totalPersonas').innerText = data.totalPersonas;
+      document.getElementById('negDetectados').innerText = data.negociosDetectados;
+      document.getElementById('clientesInst').innerText = data.clientesInstalados;
+      document.getElementById('ingresoInst').innerText = '$' + data.ingresoInstalaciones.toLocaleString();
+      document.getElementById('ingresoMen').innerText = '$' + data.ingresoMensual.toLocaleString();
+      document.getElementById('inactivos').innerText = data.inactivos;
+
+      // Pipeline (gráfico de barras horizontales o embudo? Usamos barras normales)
+      var ctx = document.getElementById('pipelineChart').getContext('2d');
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Detectados', 'Diagnóstico', 'Propuesta', 'Cerrados'],
+          datasets: [{
+            label: 'Cantidad',
+            data: [
+              data.pipeline.detectados,
+              data.pipeline.diagnostico,
+              data.pipeline.propuesta,
+              data.pipeline.cerrados
+            ],
+            backgroundColor: ['#FFB6C1', '#FFD700', '#87CEEB', '#90EE90']
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: { legend: { display: false } }
+        }
+      });
+
+      // Top exploradores
+      var tbody = document.getElementById('topExploradores');
+      tbody.innerHTML = '';
+      data.topExploradores.forEach(function(item) {
+        var row = tbody.insertRow();
+        row.insertCell().innerText = item.nombre;
+        row.insertCell().innerText = item.clientes;
+      });
+
+      // Ingresos
+      tbody = document.getElementById('topIngresos');
+      tbody.innerHTML = '';
+      data.topIngresos.forEach(function(item) {
+        var row = tbody.insertRow();
+        row.insertCell().innerText = item.nombre;
+        row.insertCell().innerText = '$' + item.total.toLocaleString();
+      });
+
+      // Actividad reciente
+      tbody = document.getElementById('actividadReciente');
+      tbody.innerHTML = '';
+      data.actividadReciente.forEach(function(item) {
+        var row = tbody.insertRow();
+        row.insertCell().innerText = item.persona;
+        row.insertCell().innerText = item.tipo;
+        row.insertCell().innerText = new Date(item.fecha).toLocaleDateString();
+      });
+    }
+  </script>
+</body>
+</html>
