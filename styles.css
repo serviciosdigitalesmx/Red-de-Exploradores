@@ -1,0 +1,341 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+    background: #f3f6fb;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    max-width: 1300px;
+    width: 100%;
+}
+
+.header {
+    margin-bottom: 2rem;
+}
+
+.header h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    background: linear-gradient(145deg, #0B2A4A 0%, #123b66 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.02em;
+}
+
+.header p {
+    color: #4a5a6e;
+    font-size: 1rem;
+    margin-top: 0.25rem;
+    border-left: 4px solid #2d7ee7;
+    padding-left: 1rem;
+}
+
+.badge {
+    background: #e9ecf3;
+    color: #1e3349;
+    padding: 0.25rem 1rem;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    display: inline-block;
+    margin-bottom: 0.75rem;
+}
+
+.cotizador-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 1.8rem;
+    align-items: start;
+}
+
+.card {
+    background: white;
+    border-radius: 28px;
+    padding: 1.8rem;
+    box-shadow: 0 15px 40px -12px rgba(14, 35, 66, 0.12);
+    border: 1px solid rgba(0, 0, 0, 0.02);
+    transition: all 0.2s;
+}
+
+.card h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #102b44;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.card h2 span {
+    background: #eef3fc;
+    border-radius: 40px;
+    font-size: 0.9rem;
+    padding: 0.2rem 1rem;
+    color: #1d4f91;
+    font-weight: 500;
+}
+
+.form-section {
+    margin-bottom: 1.6rem;
+}
+
+.form-label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #1e3a5f;
+    margin-bottom: 0.4rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.form-label i {
+    color: #2d7ee7;
+    font-style: normal;
+    font-size: 1.1rem;
+}
+
+select,
+.radio-group {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    border: 1.5px solid #e1e8f0;
+    border-radius: 16px;
+    font-size: 0.95rem;
+    background: white;
+    transition: 0.15s;
+    color: #102b44;
+    font-weight: 500;
+}
+
+select {
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%23333" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+}
+
+.radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem 1.5rem;
+    border: none;
+    padding: 0.5rem 0;
+    background: transparent;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-weight: 500;
+    color: #1f3a57;
+    font-size: 0.95rem;
+    cursor: pointer;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    accent-color: #1d4f91;
+    width: 1rem;
+    height: 1rem;
+    margin: 0;
+}
+
+.checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem 1rem;
+    background: #f9fcff;
+    padding: 1rem 1.2rem;
+    border-radius: 22px;
+    border: 1px solid #e2ecf9;
+}
+
+.checkbox-grid label {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.9rem;
+    color: #1f3f5c;
+    font-weight: 500;
+}
+
+hr {
+    margin: 1.5rem 0;
+    border: 1px solid #ecf2f9;
+}
+
+.config-note {
+    font-size: 0.85rem;
+    color: #2e4b74;
+    font-weight: 500;
+    background: #f0f7ff;
+    padding: 0.8rem;
+    border-radius: 16px;
+}
+
+.resultado-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #e9f0f8;
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.detected-label {
+    font-weight: 600;
+    color: #102b44;
+}
+
+.complejidad-badge {
+    background: #d4e2fc;
+    padding: 0.3rem 1.2rem;
+    border-radius: 30px;
+    font-weight: 600;
+    color: #134079;
+}
+
+.precio-row {
+    display: flex;
+    justify-content: space-between;
+    background: #f1f7fe;
+    padding: 1rem 1.4rem;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+}
+
+.mensual-row {
+    background: #e5effa;
+    margin-top: -0.5rem;
+}
+
+.precio-item {
+    text-align: center;
+    flex: 1;
+}
+
+.precio-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    color: #4f6f8f;
+}
+
+.precio-valor {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: #102b44;
+    line-height: 1.2;
+}
+
+.precio-valor small {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #6a7f9b;
+}
+
+.modulos-title {
+    margin: 1.5rem 0 1rem;
+    font-size: 1.1rem;
+}
+
+.modulo-sugerido {
+    background: white;
+    border: 1px solid #dde9fc;
+    border-radius: 18px;
+    padding: 0.7rem 1rem;
+    margin-bottom: 0.6rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+    color: #153e65;
+}
+
+.modulo-sugerido::before {
+    content: "✓";
+    background: #102b44;
+    color: white;
+    width: 22px;
+    height: 22px;
+    border-radius: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.comision-box {
+    background: #eaeef6;
+    border-radius: 18px;
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border: 1px solid #cbd9ec;
+}
+
+.comision-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.comision-note {
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    color: #2b4a6f;
+}
+
+.btn-copy {
+    background: white;
+    border: 2px solid #102b44;
+    padding: 0.8rem 1.5rem;
+    border-radius: 40px;
+    font-weight: 600;
+    color: #102b44;
+    cursor: pointer;
+    transition: 0.15s;
+    font-size: 0.95rem;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.btn-copy:hover {
+    background: #102b44;
+    color: white;
+}
+
+.disclaimer {
+    font-size: 0.8rem;
+    margin-top: 0.8rem;
+    color: #6c86a0;
+}
+
+.footnote {
+    font-size: 0.8rem;
+    color: #7a8b9f;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+@media (max-width: 1000px) {
+    .cotizador-grid {
+        grid-template-columns: 1fr;
+    }
+}
