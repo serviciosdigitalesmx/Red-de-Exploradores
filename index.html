@@ -3,121 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servicios Digitales MX · Cotizador Inteligente Pro</title>
+    <title>Servicios Digitales MX · Nexus AI Pro</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="progress-container">
-        <div class="progress-bar" id="progressBar"></div>
+    <!-- Quantum Loading -->
+    <div class="quantum-loading" id="quantumLoading">
+        <div class="loader">
+            <div class="loader-ring"></div>
+            <div class="loader-ring"></div>
+            <div class="loader-ring"></div>
+        </div>
     </div>
 
-    <div class="bg-animation"></div>
-    <div class="noise"></div>
-
-    <div class="floating-shapes">
-        <div class="shape shape-1"></div>
-        <div class="shape shape-2"></div>
-        <div class="shape shape-3"></div>
+    <!-- Quantum Universe -->
+    <div class="universe">
+        <div class="stars"></div>
+        <div class="nebula"></div>
     </div>
 
-    <div class="container">
-        <header class="header">
-            <div class="badge-pulse">
-                <span class="pulse-dot"></span>
-                Para exploradores · Matriz comercial v3.0
+    <!-- Floating Orbs -->
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <!-- Quantum Noise -->
+    <div class="quantum-noise"></div>
+
+    <!-- Quantum Progress -->
+    <div class="quantum-progress">
+        <div class="progress-quantum-bar" id="progressBar"></div>
+    </div>
+
+    <div class="cosmic-container">
+        <!-- Quantum Header -->
+        <header class="quantum-header">
+            <div class="hologram-badge">
+                <span class="quantum-dot"></span>
+                <span class="badge-text">⚡ Exploradores del Multiverso · Nexus AI 3.0</span>
+                <span class="quantum-dot"></span>
             </div>
-            <h1>Servicios Digitales MX</h1>
-            <p>Cotizador Inteligente con IA · Precios dinámicos en tiempo real</p>
+            <h1 class="glitch-text">
+                SERVICIOS DIGITALES MX
+                <span aria-hidden="true">SERVICIOS DIGITALES MX</span>
+                <span aria-hidden="true">SERVICIOS DIGITALES MX</span>
+            </h1>
+            <p class="quantum-subtitle">Cotizador Cuántico con IA · Precios en tiempo real desde el multiverso</p>
         </header>
 
-        <div class="app-grid">
-            <div class="form-sections">
-                <div class="glass-card" data-step="1">
-                    <div class="section-header">
-                        <div class="section-icon">🏢</div>
+        <!-- Quantum Grid -->
+        <div class="quantum-grid">
+            <!-- Form Sections -->
+            <div class="form-dimensions">
+                <!-- Business Type -->
+                <div class="dimensional-card" data-step="1">
+                    <div class="quantum-section-header">
+                        <div class="quantum-icon">🏢</div>
                         <div>
-                            <div class="section-title">Tipo de Negocio</div>
-                            <div class="section-subtitle">Selecciona la industria de tu cliente</div>
+                            <div class="quantum-title">Dimensión Comercial</div>
+                            <div class="quantum-sub">Selecciona el universo de tu cliente</div>
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label class="form-label">
-                            <span class="step-number">1</span>
-                            Giro comercial
-                        </label>
-                        <div class="custom-select">
-                            <select id="giroSelect">
-                                <option value="barberia">💈 Barbería / Estética</option>
-                                <option value="reparacion">📱 Reparación (Celulares/Computadoras)</option>
-                                <option value="taller">🔧 Taller Mecánico / Hojalatería</option>
-                                <option value="tecnico">⚡ Técnico de Campo (Minisplit, Electricista)</option>
-                                <option value="optica">👓 Óptica</option>
-                                <option value="dentista">🦷 Dentista / Consultorio</option>
-                                <option value="carpinteria">🪚 Carpintería / Herrería</option>
-                                <option value="restaurante">🍽️ Restaurante / Cocina</option>
-                                <option value="otro">✨ Otro / General</option>
-                            </select>
-                        </div>
+                    <div class="quantum-select">
+                        <select id="giroSelect">
+                            <option value="barberia">💈 Barbería / Estética Cuántica</option>
+                            <option value="reparacion">📱 Reparación Dimensional (Celulares/PC)</option>
+                            <option value="taller">🔧 Taller Mecánico / Hojalatería Cósmica</option>
+                            <option value="tecnico">⚡ Técnico de Campo (Minisplit, Electricista)</option>
+                            <option value="optica">👓 Óptica Estelar</option>
+                            <option value="dentista">🦷 Dentista / Consultorio Galáctico</option>
+                            <option value="carpinteria">🪚 Carpintería / Herrería Espacial</option>
+                            <option value="restaurante">🍽️ Restaurante / Cocina Molecular</option>
+                            <option value="otro">✨ Otro / General Multiversal</option>
+                        </select>
+                        <div class="select-glow"></div>
                     </div>
 
-                    <div class="form-group">
-                        <label class="form-label">
-                            <span class="step-number">2</span>
-                            Zona geográfica
-                        </label>
-                        <div class="custom-select">
-                            <select id="zonaSelect">
-                                <option value="sanpedro">San Pedro Garza García (Premium)</option>
-                                <option value="monterrey">Monterrey Centro / Zona Sur</option>
-                                <option value="sanNicolas">San Nicolás de los Garza</option>
-                                <option value="guadalupe">Guadalupe</option>
-                                <option value="apodaca">Apodaca</option>
-                                <option value="escobedo">Escobedo</option>
-                                <option value="juarez">Ciudad Juárez</option>
-                                <option value="garcia">García</option>
-                            </select>
-                        </div>
+                    <div class="quantum-select">
+                        <select id="zonaSelect">
+                            <option value="sanpedro">San Pedro Garza García (Dimensión Premium)</option>
+                            <option value="monterrey">Monterrey Centro / Zona Sur Cuántica</option>
+                            <option value="sanNicolas">San Nicolás de los Garza</option>
+                            <option value="guadalupe">Guadalupe</option>
+                            <option value="apodaca">Apodaca</option>
+                            <option value="escobedo">Escobedo</option>
+                            <option value="juarez">Ciudad Juárez</option>
+                            <option value="garcia">García</option>
+                        </select>
+                        <div class="select-glow"></div>
                     </div>
                 </div>
 
-                <div class="glass-card" data-step="2" style="margin-top: 1.5rem;">
-                    <div class="section-header">
-                        <div class="section-icon">⚙️</div>
+                <!-- Size & Complexity -->
+                <div class="dimensional-card" data-step="2" style="margin-top: 2rem;">
+                    <div class="quantum-section-header">
+                        <div class="quantum-icon">⚛️</div>
                         <div>
-                            <div class="section-title">Escala y Complejidad</div>
-                            <div class="section-subtitle">Ajusta según el tamaño operativo</div>
+                            <div class="quantum-title">Escala y Complejidad Cuántica</div>
+                            <div class="quantum-sub">Ajusta según el tamaño dimensional</div>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="form-label">
                             <span class="step-number">3</span>
-                            Tamaño del equipo
+                            Tamaño del equipo cuántico
                         </label>
-                        <div class="radio-grid" id="tamanoGroup">
-                            <label class="radio-card">
+                        <div class="quantum-radio-grid" id="tamanoGroup">
+                            <label class="quantum-radio">
                                 <input type="radio" name="tamano" value="1" checked>
-                                <div class="radio-content">1 persona</div>
+                                <div class="radio-dimension">1 persona</div>
                             </label>
-                            <label class="radio-card">
+                            <label class="quantum-radio">
                                 <input type="radio" name="tamano" value="2-3">
-                                <div class="radio-content">2-3 trabajadores</div>
+                                <div class="radio-dimension">2-3 trabajadores</div>
                             </label>
-                            <label class="radio-card">
+                            <label class="quantum-radio">
                                 <input type="radio" name="tamano" value="4-6">
-                                <div class="radio-content">4-6 trabajadores</div>
+                                <div class="radio-dimension">4-6 trabajadores</div>
                             </label>
-                            <label class="radio-card">
+                            <label class="quantum-radio">
                                 <input type="radio" name="tamano" value="7-10">
-                                <div class="radio-content">7-10 trabajadores</div>
+                                <div class="radio-dimension">7-10 trabajadores</div>
                             </label>
-                            <label class="radio-card">
+                            <label class="quantum-radio">
                                 <input type="radio" name="tamano" value="10+">
-                                <div class="radio-content">10+ trabajadores</div>
+                                <div class="radio-dimension">10+ trabajadores</div>
                             </label>
                         </div>
                     </div>
@@ -125,31 +140,32 @@
                     <div class="form-group">
                         <label class="form-label">
                             <span class="step-number">4</span>
-                            Nivel operativo
+                            Nivel operativo cuántico
                         </label>
-                        <div class="radio-grid" id="complejidadGroup">
-                            <label class="radio-card">
+                        <div class="quantum-radio-grid" id="complejidadGroup">
+                            <label class="quantum-radio">
                                 <input type="radio" name="complejidad" value="basico" checked>
-                                <div class="radio-content">Básico</div>
+                                <div class="radio-dimension">Básico</div>
                             </label>
-                            <label class="radio-card">
+                            <label class="quantum-radio">
                                 <input type="radio" name="complejidad" value="operativo">
-                                <div class="radio-content">Operativo</div>
+                                <div class="radio-dimension">Operativo</div>
                             </label>
-                            <label class="radio-card">
+                            <label class="quantum-radio">
                                 <input type="radio" name="complejidad" value="pro">
-                                <div class="radio-content">Pro / Enterprise</div>
+                                <div class="radio-dimension">Pro / Enterprise</div>
                             </label>
                         </div>
                     </div>
                 </div>
 
-                <div class="glass-card" data-step="3" style="margin-top: 1.5rem;">
-                    <div class="section-header">
-                        <div class="section-icon">🚀</div>
+                <!-- Extras -->
+                <div class="dimensional-card" data-step="3" style="margin-top: 2rem;">
+                    <div class="quantum-section-header">
+                        <div class="quantum-icon">🚀</div>
                         <div>
-                            <div class="section-title">Módulos Adicionales</div>
-                            <div class="section-subtitle">Personaliza la solución</div>
+                            <div class="quantum-title">Módulos Dimensionales</div>
+                            <div class="quantum-sub">Personaliza la solución cuántica</div>
                         </div>
                     </div>
 
@@ -158,71 +174,71 @@
                             <span class="step-number">5</span>
                             Funcionalidades extra
                         </label>
-                        <div class="checkbox-grid">
-                            <label class="checkbox-card">
+                        <div class="quantum-check-grid">
+                            <label class="quantum-check">
                                 <input type="checkbox" id="extraPortal" data-price="7%">
-                                <div class="checkbox-content">
-                                    <div class="checkbox-icon">🌐</div>
-                                    <div class="checkbox-info">
-                                        <span class="checkbox-title">Portal Cliente</span>
-                                        <span class="checkbox-desc">Acceso para clientes</span>
+                                <div class="check-dimension">
+                                    <div class="check-icon">🌐</div>
+                                    <div class="check-info">
+                                        <span class="check-title">Portal Cliente</span>
+                                        <span class="check-desc">Acceso dimensional</span>
                                     </div>
-                                    <span class="checkbox-price">+7%</span>
+                                    <span class="check-price">+7%</span>
                                 </div>
                             </label>
-                            <label class="checkbox-card">
+                            <label class="quantum-check">
                                 <input type="checkbox" id="extraPdf" data-price="5%">
-                                <div class="checkbox-content">
-                                    <div class="checkbox-icon">📄</div>
-                                    <div class="checkbox-info">
-                                        <span class="checkbox-title">PDF Automático</span>
-                                        <span class="checkbox-desc">Cotizaciones y reportes</span>
+                                <div class="check-dimension">
+                                    <div class="check-icon">📄</div>
+                                    <div class="check-info">
+                                        <span class="check-title">PDF Cuántico</span>
+                                        <span class="check-desc">Cotizaciones automáticas</span>
                                     </div>
-                                    <span class="checkbox-price">+5%</span>
+                                    <span class="check-price">+5%</span>
                                 </div>
                             </label>
-                            <label class="checkbox-card">
+                            <label class="quantum-check">
                                 <input type="checkbox" id="extraInv" data-price="9%">
-                                <div class="checkbox-content">
-                                    <div class="checkbox-icon">📦</div>
-                                    <div class="checkbox-info">
-                                        <span class="checkbox-title">Inventario</span>
-                                        <span class="checkbox-desc">Control de stock</span>
+                                <div class="check-dimension">
+                                    <div class="check-icon">📦</div>
+                                    <div class="check-info">
+                                        <span class="check-title">Inventario</span>
+                                        <span class="check-desc">Control de stock</span>
                                     </div>
-                                    <span class="checkbox-price">+9%</span>
+                                    <span class="check-price">+9%</span>
                                 </div>
                             </label>
-                            <label class="checkbox-card">
+                            <label class="quantum-check">
                                 <input type="checkbox" id="extraDashboard" data-price="8%">
-                                <div class="checkbox-content">
-                                    <div class="checkbox-icon">📊</div>
-                                    <div class="checkbox-info">
-                                        <span class="checkbox-title">Dashboard</span>
-                                        <span class="checkbox-desc">Métricas en tiempo real</span>
+                                <div class="check-dimension">
+                                    <div class="check-icon">📊</div>
+                                    <div class="check-info">
+                                        <span class="check-title">Dashboard</span>
+                                        <span class="check-desc">Métricas en tiempo real</span>
                                     </div>
-                                    <span class="checkbox-price">+8%</span>
+                                    <span class="check-price">+8%</span>
                                 </div>
                             </label>
-                            <label class="checkbox-card">
+                            <label class="quantum-check">
                                 <input type="checkbox" id="extraFotos" data-price="5%">
-                                <div class="checkbox-content">
-                                    <div class="checkbox-icon">📸</div>
-                                    <div class="checkbox-info">
-                                        <span class="checkbox-title">Evidencias</span>
-                                        <span class="checkbox-desc">Fotos y archivos</span>
+                                <div class="check-dimension">
+                                    <div class="check-icon">📸</div>
+                                    <div class="check-info">
+                                        <span class="check-title">Evidencias</span>
+                                        <span class="check-desc">Fotos y archivos</span>
                                     </div>
-                                    <span class="checkbox-price">+5%</span>
+                                    <span class="check-price">+5%</span>
                                 </div>
                             </label>
-                            <label class="checkbox-card">
+                            <label class="quantum-check">
                                 <input type="checkbox" id="extraWhatsapp" data-price="5%">
-                                <div class="checkbox-content">
-                                    <div class="checkbox-icon">💬</div>
-                                    <div class="checkbox-info">
-                                        <span class="checkbox-title">WhatsApp</span>
-                                        <span class="checkbox-desc">Integración API</span>
+                                <div class="check-dimension">
+                                    <div class="check-icon">💬</div>
+                                    <div class="check-info">
+                                        <span class="check-title">WhatsApp</span>
+                                        <span class="check-desc">Integración API</span>
                                     </div>
-                                    <span class="checkbox-price">+5%</span>
+                                    <span class="check-price">+5%</span>
                                 </div>
                             </label>
                         </div>
@@ -231,102 +247,110 @@
                     <div class="form-group" style="margin-bottom: 0;">
                         <label class="form-label">
                             <span class="step-number">6</span>
-                            Urgencia del proyecto
+                            Urgencia dimensional
                         </label>
-                        <div class="custom-select">
+                        <div class="quantum-select">
                             <select id="urgenciaSelect">
                                 <option value="1">🟢 Bajo - Organizado, mejora gradual</option>
                                 <option value="2" selected>🟡 Medio - Desorden moderado</option>
                                 <option value="3">🔴 Alto - Pérdida de clientes activa</option>
                             </select>
+                            <div class="select-glow"></div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="result-card glass-card">
-                <div class="result-header">
-                    <div class="price-tier" id="complexityBadge">
-                        <span>⚡</span>
+            <!-- Quantum Core Results -->
+            <div class="quantum-core dimensional-card">
+                <div class="core-header">
+                    <div class="core-glow"></div>
+                    <div class="core-badge" id="complexityBadge">
+                        <span>⚛️</span>
                         <span id="complejidadLabel">Operativo</span>
                     </div>
                     <div class="price-label">Instalación desde</div>
-                    <div class="main-price" id="instIdeal">4,800</div>
+                    <div class="quantum-price" id="instIdeal">4,800</div>
                     <div class="price-label">pesos mexicanos</div>
                 </div>
 
-                <div class="price-range">
-                    <div class="price-option minimal" data-tier="min" onclick="selectTier('min')">
+                <div class="price-dimension">
+                    <div class="dimension-option minimal" data-tier="min" onclick="selectTier('min')">
+                        <div class="option-glow"></div>
                         <div class="option-label">Mínimo</div>
                         <div class="option-price" id="instMin">$3,200</div>
                     </div>
-                    <div class="price-option" data-tier="ideal" onclick="selectTier('ideal')">
+                    <div class="dimension-option" data-tier="ideal" onclick="selectTier('ideal')">
+                        <div class="option-glow"></div>
                         <div class="option-label">Ideal ⭐</div>
                         <div class="option-price" id="instIdealSmall">$4,800</div>
                     </div>
-                    <div class="price-option premium" data-tier="premium" onclick="selectTier('premium')">
+                    <div class="dimension-option premium" data-tier="premium" onclick="selectTier('premium')">
+                        <div class="option-glow"></div>
                         <div class="option-label">Premium</div>
                         <div class="option-price" id="instPremium">$7,200</div>
                     </div>
                 </div>
 
-                <div style="margin-bottom: 1.5rem;">
-                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                        <span style="color: var(--text-secondary);">Mensualidad</span>
-                        <span style="font-weight: 600;" id="menIdeal">$480/mes</span>
+                <div style="margin-bottom: 2rem;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.75rem;">
+                        <span style="color: var(--text-secondary);">Mensualidad cuántica</span>
+                        <span style="font-weight: 700; font-size: 1.2rem;" id="menIdeal">$480/mes</span>
                     </div>
-                    <div style="height: 4px; background: rgba(255,255,255,0.1); border-radius: 2px; overflow: hidden;">
-                        <div style="height: 100%; width: 60%; background: linear-gradient(90deg, var(--accent), var(--gradient-3)); border-radius: 2px; transition: width 0.5s;" id="monthlyBar"></div>
+                    <div style="height: 6px; background: rgba(255,255,255,0.05); border-radius: 3px; overflow: hidden; position: relative;">
+                        <div style="height: 100%; background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end), var(--gradient-alt)); border-radius: 3px; transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 0 20px var(--accent);" id="monthlyBar"></div>
                     </div>
-                    <div style="display: flex; justify-content: space-between; margin-top: 0.5rem; font-size: 0.75rem; color: var(--text-secondary);">
+                    <div style="display: flex; justify-content: space-between; margin-top: 0.75rem; font-size: 0.8rem; color: var(--text-tertiary);">
                         <span>Mín: <span id="menMin">$350</span></span>
                         <span>Max: <span id="menPremium">$650</span></span>
                     </div>
                 </div>
 
-                <div class="commission-box">
+                <div class="quantum-commission">
                     <div class="commission-header">
                         <div class="commission-icon">💰</div>
                         <div>
-                            <div class="commission-title">Tu Comisión</div>
-                            <div class="commission-subtitle">Como explorador SDMX</div>
+                            <div class="quantum-title" style="font-size: 1.2rem;">Tu Comisión Cuántica</div>
+                            <div class="quantum-sub" style="font-size: 0.8rem;">Como explorador SDMX</div>
                         </div>
                     </div>
-                    <div class="commission-row">
-                        <div class="commission-item">
+                    <div style="display: flex; justify-content: space-around; position: relative; z-index: 2;">
+                        <div style="text-align: center;">
                             <div class="commission-value" id="comisionInst">$1,440</div>
-                            <div class="commission-label">Por instalación</div>
+                            <div class="quantum-sub">Por instalación</div>
                         </div>
-                        <div style="width: 1px; background: rgba(16, 185, 129, 0.3);"></div>
-                        <div class="commission-item">
+                        <div style="width: 2px; background: linear-gradient(to bottom, transparent, rgba(16, 185, 129, 0.5), transparent);"></div>
+                        <div style="text-align: center;">
                             <div class="commission-value" id="comisionMen">$48</div>
-                            <div class="commission-label">Mensual recurrente</div>
+                            <div class="quantum-sub">Mensual recurrente</div>
                         </div>
                     </div>
                 </div>
 
-                <div class="modules-section">
-                    <div class="modules-title">Módulos Incluidos</div>
-                    <div class="module-list" id="modulosContainer"></div>
+                <div class="quantum-modules">
+                    <div class="modules-title">Módulos Incluidos en tu Dimensión</div>
+                    <div class="module-quantum-list" id="modulosContainer"></div>
                 </div>
 
-                <button class="btn-primary" id="copyResumenBtn">
+                <button class="quantum-button" id="copyResumenBtn">
                     <span>📋</span>
-                    <span>Copiar Propuesta Comercial</span>
+                    <span>Copiar Propuesta Cuántica</span>
+                    <span>⚡</span>
                 </button>
 
-                <p style="text-align: center; margin-top: 1rem; font-size: 0.75rem; color: var(--text-secondary);">
-                    * Precios estimados, sujetos a ajustes según requerimientos específicos
+                <p style="text-align: center; margin-top: 1.5rem; font-size: 0.7rem; color: var(--text-tertiary);">
+                    * Precios del multiverso, sujetos a fluctuaciones dimensionales
                 </p>
             </div>
         </div>
     </div>
 
-    <div class="toast" id="toast">
-        <div class="toast-icon">✅</div>
-        <div class="toast-content">
-            <div class="toast-title">¡Resumen copiado!</div>
-            <div class="toast-message">Listo para compartir con tu cliente</div>
+    <!-- Quantum Toast -->
+    <div class="quantum-toast" id="toast">
+        <div class="toast-quantum-icon">✅</div>
+        <div>
+            <div style="font-weight: 700; margin-bottom: 0.25rem;">¡Resumen cuántico copiado!</div>
+            <div style="font-size: 0.9rem; color: var(--text-secondary);">Listo para compartir en tu dimensión</div>
         </div>
     </div>
 
