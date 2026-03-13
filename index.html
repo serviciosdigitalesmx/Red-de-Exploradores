@@ -3,162 +3,333 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servicios Digitales MX · Cotizador Inteligente</title>
+    <title>Servicios Digitales MX · Cotizador Inteligente Pro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="container">
-    <div class="header">
-        <div class="badge">⚡ Para exploradores · Matriz comercial recomendada</div>
-        <h1>Servicios Digitales MX · Cotizador Inteligente</h1>
-        <p>Selecciona las características del negocio · Precios sugeridos + comisión explorador</p>
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
     </div>
 
-    <div class="cotizador-grid">
-        <div class="card">
-            <h2>🔍 Diagnóstico del negocio <span>paso a paso</span></h2>
+    <div class="bg-animation"></div>
+    <div class="noise"></div>
 
-            <div class="form-section">
-                <div class="form-label"><i>1</i> Tipo de negocio</div>
-                <select id="giroSelect">
-                    <option value="barberia">Barbería / estética</option>
-                    <option value="reparacion">Reparación (celulares / compus)</option>
-                    <option value="taller">Taller mecánico / hojalatería</option>
-                    <option value="tecnico">Técnico de campo (minisplit, electricista)</option>
-                    <option value="optica">Óptica</option>
-                    <option value="dentista">Dentista / consultorio</option>
-                    <option value="carpinteria">Carpintería / herrería</option>
-                    <option value="restaurante">Restaurante / cocina</option>
-                    <option value="otro">Otro / general</option>
-                </select>
+    <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <div class="container">
+        <header class="header">
+            <div class="badge-pulse">
+                <span class="pulse-dot"></span>
+                Para exploradores · Matriz comercial v3.0
             </div>
+            <h1>Servicios Digitales MX</h1>
+            <p>Cotizador Inteligente con IA · Precios dinámicos en tiempo real</p>
+        </header>
 
-            <div class="form-section">
-                <div class="form-label"><i>2</i> Zona / municipio</div>
-                <select id="zonaSelect">
-                    <option value="sanpedro">San Pedro (x2.1)</option>
-                    <option value="monterrey">Monterrey centro / zona media (x1.45)</option>
-                    <option value="sanNicolas">San Nicolás (x1.25)</option>
-                    <option value="guadalupe">Guadalupe (x1.08)</option>
-                    <option value="apodaca">Apodaca (x1.08)</option>
-                    <option value="escobedo">Escobedo (x0.95)</option>
-                    <option value="juarez">Juárez (x0.88)</option>
-                    <option value="garcia">García (x0.88)</option>
-                </select>
-            </div>
+        <div class="app-grid">
+            <div class="form-sections">
+                <div class="glass-card" data-step="1">
+                    <div class="section-header">
+                        <div class="section-icon">🏢</div>
+                        <div>
+                            <div class="section-title">Tipo de Negocio</div>
+                            <div class="section-subtitle">Selecciona la industria de tu cliente</div>
+                        </div>
+                    </div>
 
-            <div class="form-section">
-                <div class="form-label"><i>3</i> Tamaño (trabajadores)</div>
-                <div class="radio-group">
-                    <label><input type="radio" name="tamano" value="1" checked> 1 persona</label>
-                    <label><input type="radio" name="tamano" value="2-3"> 2 a 3</label>
-                    <label><input type="radio" name="tamano" value="4-6"> 4 a 6</label>
-                    <label><input type="radio" name="tamano" value="7-10"> 7 a 10</label>
-                    <label><input type="radio" name="tamano" value="10+"> 10+</label>
+                    <div class="form-group">
+                        <label class="form-label">
+                            <span class="step-number">1</span>
+                            Giro comercial
+                        </label>
+                        <div class="custom-select">
+                            <select id="giroSelect">
+                                <option value="barberia">💈 Barbería / Estética</option>
+                                <option value="reparacion">📱 Reparación (Celulares/Computadoras)</option>
+                                <option value="taller">🔧 Taller Mecánico / Hojalatería</option>
+                                <option value="tecnico">⚡ Técnico de Campo (Minisplit, Electricista)</option>
+                                <option value="optica">👓 Óptica</option>
+                                <option value="dentista">🦷 Dentista / Consultorio</option>
+                                <option value="carpinteria">🪚 Carpintería / Herrería</option>
+                                <option value="restaurante">🍽️ Restaurante / Cocina</option>
+                                <option value="otro">✨ Otro / General</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">
+                            <span class="step-number">2</span>
+                            Zona geográfica
+                        </label>
+                        <div class="custom-select">
+                            <select id="zonaSelect">
+                                <option value="sanpedro">San Pedro Garza García (Premium)</option>
+                                <option value="monterrey">Monterrey Centro / Zona Sur</option>
+                                <option value="sanNicolas">San Nicolás de los Garza</option>
+                                <option value="guadalupe">Guadalupe</option>
+                                <option value="apodaca">Apodaca</option>
+                                <option value="escobedo">Escobedo</option>
+                                <option value="juarez">Ciudad Juárez</option>
+                                <option value="garcia">García</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card" data-step="2" style="margin-top: 1.5rem;">
+                    <div class="section-header">
+                        <div class="section-icon">⚙️</div>
+                        <div>
+                            <div class="section-title">Escala y Complejidad</div>
+                            <div class="section-subtitle">Ajusta según el tamaño operativo</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">
+                            <span class="step-number">3</span>
+                            Tamaño del equipo
+                        </label>
+                        <div class="radio-grid" id="tamanoGroup">
+                            <label class="radio-card">
+                                <input type="radio" name="tamano" value="1" checked>
+                                <div class="radio-content">1 persona</div>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="tamano" value="2-3">
+                                <div class="radio-content">2-3 trabajadores</div>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="tamano" value="4-6">
+                                <div class="radio-content">4-6 trabajadores</div>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="tamano" value="7-10">
+                                <div class="radio-content">7-10 trabajadores</div>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="tamano" value="10+">
+                                <div class="radio-content">10+ trabajadores</div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">
+                            <span class="step-number">4</span>
+                            Nivel operativo
+                        </label>
+                        <div class="radio-grid" id="complejidadGroup">
+                            <label class="radio-card">
+                                <input type="radio" name="complejidad" value="basico" checked>
+                                <div class="radio-content">Básico</div>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="complejidad" value="operativo">
+                                <div class="radio-content">Operativo</div>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="complejidad" value="pro">
+                                <div class="radio-content">Pro / Enterprise</div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card" data-step="3" style="margin-top: 1.5rem;">
+                    <div class="section-header">
+                        <div class="section-icon">🚀</div>
+                        <div>
+                            <div class="section-title">Módulos Adicionales</div>
+                            <div class="section-subtitle">Personaliza la solución</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">
+                            <span class="step-number">5</span>
+                            Funcionalidades extra
+                        </label>
+                        <div class="checkbox-grid">
+                            <label class="checkbox-card">
+                                <input type="checkbox" id="extraPortal" data-price="7%">
+                                <div class="checkbox-content">
+                                    <div class="checkbox-icon">🌐</div>
+                                    <div class="checkbox-info">
+                                        <span class="checkbox-title">Portal Cliente</span>
+                                        <span class="checkbox-desc">Acceso para clientes</span>
+                                    </div>
+                                    <span class="checkbox-price">+7%</span>
+                                </div>
+                            </label>
+                            <label class="checkbox-card">
+                                <input type="checkbox" id="extraPdf" data-price="5%">
+                                <div class="checkbox-content">
+                                    <div class="checkbox-icon">📄</div>
+                                    <div class="checkbox-info">
+                                        <span class="checkbox-title">PDF Automático</span>
+                                        <span class="checkbox-desc">Cotizaciones y reportes</span>
+                                    </div>
+                                    <span class="checkbox-price">+5%</span>
+                                </div>
+                            </label>
+                            <label class="checkbox-card">
+                                <input type="checkbox" id="extraInv" data-price="9%">
+                                <div class="checkbox-content">
+                                    <div class="checkbox-icon">📦</div>
+                                    <div class="checkbox-info">
+                                        <span class="checkbox-title">Inventario</span>
+                                        <span class="checkbox-desc">Control de stock</span>
+                                    </div>
+                                    <span class="checkbox-price">+9%</span>
+                                </div>
+                            </label>
+                            <label class="checkbox-card">
+                                <input type="checkbox" id="extraDashboard" data-price="8%">
+                                <div class="checkbox-content">
+                                    <div class="checkbox-icon">📊</div>
+                                    <div class="checkbox-info">
+                                        <span class="checkbox-title">Dashboard</span>
+                                        <span class="checkbox-desc">Métricas en tiempo real</span>
+                                    </div>
+                                    <span class="checkbox-price">+8%</span>
+                                </div>
+                            </label>
+                            <label class="checkbox-card">
+                                <input type="checkbox" id="extraFotos" data-price="5%">
+                                <div class="checkbox-content">
+                                    <div class="checkbox-icon">📸</div>
+                                    <div class="checkbox-info">
+                                        <span class="checkbox-title">Evidencias</span>
+                                        <span class="checkbox-desc">Fotos y archivos</span>
+                                    </div>
+                                    <span class="checkbox-price">+5%</span>
+                                </div>
+                            </label>
+                            <label class="checkbox-card">
+                                <input type="checkbox" id="extraWhatsapp" data-price="5%">
+                                <div class="checkbox-content">
+                                    <div class="checkbox-icon">💬</div>
+                                    <div class="checkbox-info">
+                                        <span class="checkbox-title">WhatsApp</span>
+                                        <span class="checkbox-desc">Integración API</span>
+                                    </div>
+                                    <span class="checkbox-price">+5%</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 0;">
+                        <label class="form-label">
+                            <span class="step-number">6</span>
+                            Urgencia del proyecto
+                        </label>
+                        <div class="custom-select">
+                            <select id="urgenciaSelect">
+                                <option value="1">🟢 Bajo - Organizado, mejora gradual</option>
+                                <option value="2" selected>🟡 Medio - Desorden moderado</option>
+                                <option value="3">🔴 Alto - Pérdida de clientes activa</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="form-section">
-                <div class="form-label"><i>4</i> Complejidad operativa</div>
-                <div class="radio-group">
-                    <label><input type="radio" name="complejidad" value="basico" checked> Básico (agenda, clientes)</label>
-                    <label><input type="radio" name="complejidad" value="operativo"> Operativo (seguimiento, estados)</label>
-                    <label><input type="radio" name="complejidad" value="pro"> Pro (módulos internos, técnico)</label>
+            <div class="result-card glass-card">
+                <div class="result-header">
+                    <div class="price-tier" id="complexityBadge">
+                        <span>⚡</span>
+                        <span id="complejidadLabel">Operativo</span>
+                    </div>
+                    <div class="price-label">Instalación desde</div>
+                    <div class="main-price" id="instIdeal">4,800</div>
+                    <div class="price-label">pesos mexicanos</div>
                 </div>
-            </div>
 
-            <div class="form-section">
-                <div class="form-label"><i>5</i> Necesidades extras (opcional)</div>
-                <div class="checkbox-grid">
-                    <label><input type="checkbox" id="extraPortal" value="portal"> Portal cliente</label>
-                    <label><input type="checkbox" id="extraPdf" value="pdf"> PDF automático</label>
-                    <label><input type="checkbox" id="extraInv" value="inventario"> Inventario</label>
-                    <label><input type="checkbox" id="extraDashboard" value="dashboard"> Dashboard</label>
-                    <label><input type="checkbox" id="extraFotos" value="fotos"> Evidencias / fotos</label>
-                    <label><input type="checkbox" id="extraWhatsapp" value="whatsapp"> WhatsApp operativo</label>
+                <div class="price-range">
+                    <div class="price-option minimal" data-tier="min" onclick="selectTier('min')">
+                        <div class="option-label">Mínimo</div>
+                        <div class="option-price" id="instMin">$3,200</div>
+                    </div>
+                    <div class="price-option" data-tier="ideal" onclick="selectTier('ideal')">
+                        <div class="option-label">Ideal ⭐</div>
+                        <div class="option-price" id="instIdealSmall">$4,800</div>
+                    </div>
+                    <div class="price-option premium" data-tier="premium" onclick="selectTier('premium')">
+                        <div class="option-label">Premium</div>
+                        <div class="option-price" id="instPremium">$7,200</div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="form-section">
-                <div class="form-label"><i>6</i> Urgencia / dolor percibido</div>
-                <select id="urgenciaSelect">
-                    <option value="1">Bajo (organizado, solo quiere mejorar)</option>
-                    <option value="2" selected>Medio (desorden moderado)</option>
-                    <option value="3">Alto (pierde clientes o seguimiento)</option>
-                </select>
-            </div>
+                <div style="margin-bottom: 1.5rem;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                        <span style="color: var(--text-secondary);">Mensualidad</span>
+                        <span style="font-weight: 600;" id="menIdeal">$480/mes</span>
+                    </div>
+                    <div style="height: 4px; background: rgba(255,255,255,0.1); border-radius: 2px; overflow: hidden;">
+                        <div style="height: 100%; width: 60%; background: linear-gradient(90deg, var(--accent), var(--gradient-3)); border-radius: 2px; transition: width 0.5s;" id="monthlyBar"></div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; margin-top: 0.5rem; font-size: 0.75rem; color: var(--text-secondary);">
+                        <span>Mín: <span id="menMin">$350</span></span>
+                        <span>Max: <span id="menPremium">$650</span></span>
+                    </div>
+                </div>
 
-            <hr>
-            <div class="config-note">
-                ⚙️ Los módulos sugeridos se ajustan automáticamente abajo.
+                <div class="commission-box">
+                    <div class="commission-header">
+                        <div class="commission-icon">💰</div>
+                        <div>
+                            <div class="commission-title">Tu Comisión</div>
+                            <div class="commission-subtitle">Como explorador SDMX</div>
+                        </div>
+                    </div>
+                    <div class="commission-row">
+                        <div class="commission-item">
+                            <div class="commission-value" id="comisionInst">$1,440</div>
+                            <div class="commission-label">Por instalación</div>
+                        </div>
+                        <div style="width: 1px; background: rgba(16, 185, 129, 0.3);"></div>
+                        <div class="commission-item">
+                            <div class="commission-value" id="comisionMen">$48</div>
+                            <div class="commission-label">Mensual recurrente</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modules-section">
+                    <div class="modules-title">Módulos Incluidos</div>
+                    <div class="module-list" id="modulosContainer"></div>
+                </div>
+
+                <button class="btn-primary" id="copyResumenBtn">
+                    <span>📋</span>
+                    <span>Copiar Propuesta Comercial</span>
+                </button>
+
+                <p style="text-align: center; margin-top: 1rem; font-size: 0.75rem; color: var(--text-secondary);">
+                    * Precios estimados, sujetos a ajustes según requerimientos específicos
+                </p>
             </div>
         </div>
+    </div>
 
-        <div class="card result-card">
-            <h2>💰 Cotización recomendada <span>tiempo real</span></h2>
-
-            <div class="resultado-header">
-                <span class="detected-label">Nivel detectado:</span>
-                <span class="complejidad-badge" id="complejidadLabel">Operativo</span>
-            </div>
-
-            <div class="precio-row">
-                <div class="precio-item">
-                    <div class="precio-label">Mínimo</div>
-                    <div class="precio-valor" id="instMin">$3,200</div>
-                </div>
-                <div class="precio-item">
-                    <div class="precio-label">⭐ Ideal</div>
-                    <div class="precio-valor" id="instIdeal">$4,800</div>
-                </div>
-                <div class="precio-item">
-                    <div class="precio-label">Premium</div>
-                    <div class="precio-valor" id="instPremium">$7,200</div>
-                </div>
-            </div>
-
-            <div class="precio-row mensual-row">
-                <div class="precio-item">
-                    <div class="precio-label">Mensual mín</div>
-                    <div class="precio-valor" id="menMin">$350</div>
-                </div>
-                <div class="precio-item">
-                    <div class="precio-label">Mensual ideal</div>
-                    <div class="precio-valor" id="menIdeal">$480</div>
-                </div>
-                <div class="precio-item">
-                    <div class="precio-label">Mensual prem</div>
-                    <div class="precio-valor" id="menPremium">$650</div>
-                </div>
-            </div>
-
-            <div class="comision-box">
-                <div class="comision-row">
-                    <span>🔹 Tu comisión instalación: <strong id="comisionInst">$1,440</strong></span>
-                    <span>🔸 Recurrente: <strong id="comisionMen">$48</strong>/mes</span>
-                </div>
-                <div class="comision-note">*30% instalación · 10% mensualidad (ideal)</div>
-            </div>
-
-            <h3 class="modulos-title">📦 Módulos sugeridos</h3>
-            <div id="modulosContainer">
-                <div class="modulo-sugerido">Registro de clientes</div>
-                <div class="modulo-sugerido">Agenda / citas</div>
-                <div class="modulo-sugerido">Historial</div>
-                <div class="modulo-sugerido">Seguimiento por estados</div>
-                <div class="modulo-sugerido">WhatsApp</div>
-            </div>
-
-            <button class="btn-copy" id="copyResumenBtn">📋 Copiar resumen para enviar</button>
-            <p class="disclaimer">* precios en pesos mexicanos, incluyen ajuste por zona y tamaño. No incluye IVA ni extras.</p>
+    <div class="toast" id="toast">
+        <div class="toast-icon">✅</div>
+        <div class="toast-content">
+            <div class="toast-title">¡Resumen copiado!</div>
+            <div class="toast-message">Listo para compartir con tu cliente</div>
         </div>
     </div>
 
-    <div class="footnote">
-        ⚡ Servicios Digitales MX · Matriz comercial v2.0 · Los rangos son sugerencias para exploradores · Ajustar según caso real.
-    </div>
-</div>
-
-<script src="app.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
