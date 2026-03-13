@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios Digitales MX · Cotizador Inteligente</title>
+    <?!= include('Styles'); ?>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <div class="badge">⚡ Para exploradores · Matriz comercial recomendada</div>
+        <h1>Servicios Digitales MX · Cotizador Inteligente</h1>
+        <p>Selecciona las características del negocio · Precios sugeridos + comisión explorador</p>
+    </div>
+
+    <div class="cotizador-grid">
+        <div class="card">
+            <h2>🔍 Diagnóstico del negocio <span>paso a paso</span></h2>
+
+            <div class="form-section">
+                <div class="form-label"><i>1</i> Tipo de negocio</div>
+                <select id="giroSelect">
+                    <option value="barberia">Barbería / estética</option>
+                    <option value="reparacion">Reparación (celulares / compus)</option>
+                    <option value="taller">Taller mecánico / hojalatería</option>
+                    <option value="tecnico">Técnico de campo (minisplit, electricista)</option>
+                    <option value="optica">Óptica</option>
+                    <option value="dentista">Dentista / consultorio</option>
+                    <option value="carpinteria">Carpintería / herrería</option>
+                    <option value="restaurante">Restaurante / cocina</option>
+                    <option value="otro">Otro / general</option>
+                </select>
+            </div>
+
+            <div class="form-section">
+                <div class="form-label"><i>2</i> Zona / municipio</div>
+                <select id="zonaSelect">
+                    <option value="sanpedro">San Pedro (x2.1)</option>
+                    <option value="monterrey">Monterrey centro / zona media (x1.45)</option>
+                    <option value="sanNicolas">San Nicolás (x1.25)</option>
+                    <option value="guadalupe">Guadalupe (x1.08)</option>
+                    <option value="apodaca">Apodaca (x1.08)</option>
+                    <option value="escobedo">Escobedo (x0.95)</option>
+                    <option value="juarez">Juárez (x0.88)</option>
+                    <option value="garcia">García (x0.88)</option>
+                </select>
+            </div>
+
+            <div class="form-section">
+                <div class="form-label"><i>3</i> Tamaño (trabajadores)</div>
+                <div class="radio-group">
+                    <label><input type="radio" name="tamano" value="1" checked> 1 persona</label>
+                    <label><input type="radio" name="tamano" value="2-3"> 2 a 3</label>
+                    <label><input type="radio" name="tamano" value="4-6"> 4 a 6</label>
+                    <label><input type="radio" name="tamano" value="7-10"> 7 a 10</label>
+                    <label><input type="radio" name="tamano" value="10+"> 10+</label>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <div class="form-label"><i>4</i> Complejidad operativa</div>
+                <div class="radio-group">
+                    <label><input type="radio" name="complejidad" value="basico" checked> Básico (agenda, clientes)</label>
+                    <label><input type="radio" name="complejidad" value="operativo"> Operativo (seguimiento, estados)</label>
+                    <label><input type="radio" name="complejidad" value="pro"> Pro (módulos internos, técnico)</label>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <div class="form-label"><i>5</i> Necesidades extras (opcional)</div>
+                <div class="checkbox-grid">
+                    <label><input type="checkbox" id="extraPortal" value="portal"> Portal cliente</label>
+                    <label><input type="checkbox" id="extraPdf" value="pdf"> PDF automático</label>
+                    <label><input type="checkbox" id="extraInv" value="inventario"> Inventario</label>
+                    <label><input type="checkbox" id="extraDashboard" value="dashboard"> Dashboard</label>
+                    <label><input type="checkbox" id="extraFotos" value="fotos"> Evidencias / fotos</label>
+                    <label><input type="checkbox" id="extraWhatsapp" value="whatsapp"> WhatsApp operativo</label>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <div class="form-label"><i>6</i> Urgencia / dolor percibido</div>
+                <select id="urgenciaSelect">
+                    <option value="1">Bajo (organizado, solo quiere mejorar)</option>
+                    <option value="2" selected>Medio (desorden moderado)</option>
+                    <option value="3">Alto (pierde clientes o seguimiento)</option>
+                </select>
+            </div>
+
+            <hr>
+            <div class="config-note">
+                ⚙️ Los módulos sugeridos se ajustan automáticamente abajo.
+            </div>
+        </div>
+
+        <div class="card result-card">
+            <h2>💰 Cotización recomendada <span>tiempo real</span></h2>
+
+            <div class="resultado-header">
+                <span class="detected-label">Nivel detectado:</span>
+                <span class="complejidad-badge" id="complejidadLabel">Operativo</span>
+            </div>
+
+            <div class="precio-row">
+                <div class="precio-item">
+                    <div class="precio-label">Mínimo</div>
+                    <div class="precio-valor" id="instMin">$3,200</div>
+                </div>
+                <div class="precio-item">
+                    <div class="precio-label">⭐ Ideal</div>
+                    <div class="precio-valor" id="instIdeal">$4,800</div>
+                </div>
+                <div class="precio-item">
+                    <div class="precio-label">Premium</div>
+                    <div class="precio-valor" id="instPremium">$7,200</div>
+                </div>
+            </div>
+
+            <div class="precio-row mensual-row">
+                <div class="precio-item">
+                    <div class="precio-label">Mensual mín</div>
+                    <div class="precio-valor" id="menMin">$350</div>
+                </div>
+                <div class="precio-item">
+                    <div class="precio-label">Mensual ideal</div>
+                    <div class="precio-valor" id="menIdeal">$480</div>
+                </div>
+                <div class="precio-item">
+                    <div class="precio-label">Mensual prem</div>
+                    <div class="precio-valor" id="menPremium">$650</div>
+                </div>
+            </div>
+
+            <div class="comision-box">
+                <div class="comision-row">
+                    <span>🔹 Tu comisión instalación: <strong id="comisionInst">$1,440</strong></span>
+                    <span>🔸 Recurrente: <strong id="comisionMen">$48</strong>/mes</span>
+                </div>
+                <div class="comision-note">*30% instalación · 10% mensualidad (ideal)</div>
+            </div>
+
+            <h3 class="modulos-title">📦 Módulos sugeridos</h3>
+            <div id="modulosContainer">
+                <div class="modulo-sugerido">Registro de clientes</div>
+                <div class="modulo-sugerido">Agenda / citas</div>
+                <div class="modulo-sugerido">Historial</div>
+                <div class="modulo-sugerido">Seguimiento por estados</div>
+                <div class="modulo-sugerido">WhatsApp</div>
+            </div>
+
+            <button class="btn-copy" id="copyResumenBtn">📋 Copiar resumen para enviar</button>
+            <p class="disclaimer">* precios en pesos mexicanos, incluyen ajuste por zona y tamaño. No incluye IVA ni extras.</p>
+        </div>
+    </div>
+
+    <div class="footnote">
+        ⚡ Servicios Digitales MX · Matriz comercial v2.0 · Los rangos son sugerencias para exploradores · Ajustar según caso real.
+    </div>
+</div>
+
+<?!= include('Script'); ?>
+</body>
+</html>
